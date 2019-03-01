@@ -1,0 +1,21 @@
+.Form {
+	width: 100%;
+	height: 100%;
+}
+
+.Form__ActionButtons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Form__ActionButtons > * {
+	margin: var(--double);
+	max-width: 30%;
+}
+
+@media (max-width: 320px) {
+	.Form__ActionButtons > * {
+		max-width: 45%;
+	}
+}

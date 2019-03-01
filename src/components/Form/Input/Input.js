@@ -12,6 +12,8 @@ const Input = props => {
 					{...props.elementConfig}
 					value={props.value}
 					onChange={props.changed}
+					id={props.id}
+					name={props.name}
 				/>
 			);
 			break;
@@ -22,6 +24,8 @@ const Input = props => {
 					{...props.elementConfig}
 					value={props.value}
 					onChange={props.changed}
+					id={props.id}
+					name={props.name}
 				/>
 			);
 			break;
@@ -30,7 +34,9 @@ const Input = props => {
 				<select
 					className={css.InputElement}
 					value={props.value}
-					onChange={props.changed}>
+					onChange={props.changed}
+					id={props.id}
+					name={props.name}>
 					{props.elementConfig.options.map(option => (
 						<option key={option.value} value={option.value}>
 							{option.displayValue}
@@ -46,6 +52,8 @@ const Input = props => {
 					{...props.elementConfig}
 					value={props.value}
 					onChange={props.changed}
+					id={props.id}
+					name={props.name}
 				/>
 			);
 			break;
@@ -53,7 +61,14 @@ const Input = props => {
 
 	return (
 		<div className={css.Input}>
-			<label className={css.Label}>{props.label}</label>
+			<label
+				className={css.Input__LabelGroup}
+				htmlFor={props.id}
+				id={props.id}
+				name={props.name}>
+				<span className={css.Input__Label}>{props.label}</span>
+				<span className={css.Input__Hint}>{props.hint}</span>
+			</label>
 			{inputElement}
 		</div>
 	);

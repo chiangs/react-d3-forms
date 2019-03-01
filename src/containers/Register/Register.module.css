@@ -1,0 +1,11 @@
+.Register {
+	padding: var(--view-padding);
+	display: flex;
+	flex-direction: column;
+}
+
+@media (max-width: 500px) {
+	.Register {
+		padding: var(--view-padding-mobile);
+	}
+}

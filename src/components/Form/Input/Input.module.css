@@ -1,0 +1,40 @@
+.Input {
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.Input__LabelGroup {
+	width: 100%;
+}
+
+.Input__Label {
+	display: block;
+	font-family: var(--font-main);
+	font-size: var(--font-reg);
+	font-weight: bold;
+}
+
+.Input__Hint {
+	display: block;
+	font-family: var(--font-main);
+	font-size: var(--font-min);
+	font-style: italic;
+}
+
+.InputElement {
+	width: 100%;
+	box-sizing: border-box;
+	outline: none;
+	border: var(--border);
+	background-color: var(--white);
+	font: inherit;
+	padding: 6px 10px;
+	transition: ease-out, outline 0.25s ease-out;
+}
+
+.InputElement:focus {
+	width: 100%;
+	box-sizing: border-box;
+	outline: var(--focus-outline);
+}
