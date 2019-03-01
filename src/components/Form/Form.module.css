@@ -3,6 +3,10 @@
 	height: 100%;
 }
 
+.Form__ErrorSection {
+	border: var(--border-error);
+}
+
 .Form__ActionButtons {
 	display: flex;
 	justify-content: space-between;

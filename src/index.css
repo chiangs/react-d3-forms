@@ -4,7 +4,10 @@
 	--white: #ffffff;
 	--grey: #cccccc;
 	--blue: #00a2ff;
+	--red: #d30000;
+	--error: var(--red);
 	--border: 1px solid var(--black);
+	--border-error: 1px solid var(--error);
 	--focus-color: var(--blue);
 	--focus-outline: 2px solid var(--focus-color);
 	--unit: 5;

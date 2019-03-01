@@ -1,0 +1,15 @@
+.ErrorMessages {
+	color: var(--red);
+}
+
+.Error {
+	font-weight: bold;
+	font-size: var(--font-reg);
+	list-style-type: none;
+}
+
+@media (max-width: 600px) {
+	.Error {
+		font-size: var(--font-min);
+	}
+}
