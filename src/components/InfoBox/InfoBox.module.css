@@ -1,0 +1,15 @@
+.InfoBox__Title {
+	font-size: var(--font-max);
+	margin-bottom: var(--triple);
+}
+
+.InfoBox__Information {
+	font-size: var(--font-min);
+	padding: 0 5%;
+}
+
+@media (max-width: 420px) {
+	.InfoBox__Title {
+		font-size: var(--font-label);
+	}
+}

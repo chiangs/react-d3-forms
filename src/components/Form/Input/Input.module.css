@@ -54,7 +54,7 @@
 	border: var(--border-error);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1124px) {
 	.Input {
 		max-width: 45%;
 	}

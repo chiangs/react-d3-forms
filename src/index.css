@@ -14,10 +14,10 @@
 	--single: calc(var(--unit) * 1px);
 	--double: calc(var(--unit) * 2px);
 	--triple: calc(var(--unit) * 3px);
-	--font-min: 12px;
+	--font-min: 14px;
 	--font-reg: 16px;
-	--font-label: 18px;
-	--font-max: 22px;
+	--font-label: 26px;
+	--font-max: 50px;
 	--view-padding: 5% 25%;
 	--view-padding-mobile: 1% 5%;
 }

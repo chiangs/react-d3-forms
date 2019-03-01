@@ -8,12 +8,30 @@ const Form = props => {
 	const buttonConfirmLabel = 'REGISTER';
 	const buttonCancelLabel = 'CANCEL';
 	const formElements = [...props.formElements];
+	const errorMessages = [];
+	for (const [index, value] of formElements.entries()) {
+		if (!value.config.validation.valid) {
+			errorMessages.push({
+				id: index,
+				msg: `There's error with ${value.config.label}`
+			});
+		}
+	}
+	const errorMessagesArticle =
+		props.showErrors && errorMessages.length > 0 ? (
+			<section className={css.Form__ErrorSection}>
+				{
+					<ErrorMessages
+						showErrors={props.showErrors}
+						errorMessages={errorMessages}
+					/>
+				}
+			</section>
+		) : null;
 
 	return (
 		<form className={css.Form} onSubmit={props.formSubmitHandler}>
-			<section className={css.Form__ErrorSection}>
-				<ErrorMessages showErrors={props.showErrors} />
-			</section>
+			{errorMessagesArticle}
 			<section className={css.Form__FormControls}>
 				{formElements.map(element => (
 					<Input

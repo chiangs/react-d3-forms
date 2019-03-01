@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import css from './Register.module.css';
-import DataVisualization from '../../components/DataVisualization/DataVisualization';
+import { RegisterForm } from './_Register-form-settings';
 import Form from '../../components/Form/Form';
-import { RegisterForm } from './_Register-form-setttings';
+import InfoBox from '../../components/InfoBox/InfoBox';
 
 export default class Register extends Component {
 	state = {
 		form: RegisterForm,
+		content: {
+			title: 'Register Form',
+			information: [
+				'This register form is built by providing an initial state in a JavaScript object with configuration settings for the controls and for validation. These settings are then passed to a reusable Form and Input components. Potential refactor opportunities are to move the validation, change and submit handlers to a Form Container or React Hook.',
+				"Validation messages aren't shown until user tries to submit, and is highly accessible allowing user to navigate via keyboard, screen reader friendly, and positions labels and texts to facilitate visual acquisition."
+			]
+		},
 		showErrors: false
 	};
 
@@ -78,7 +85,7 @@ export default class Register extends Component {
 		return (
 			<article className={css.Register}>
 				<section className={css.DataVisualization}>
-					<DataVisualization />
+					<InfoBox content={this.state.content} />
 				</section>
 				<section className={css.FormSection}>
 					<Form

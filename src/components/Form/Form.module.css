@@ -29,7 +29,7 @@
 	}
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1124px) {
 	.Form__FormControls {
 		flex-direction: row;
 		flex-wrap: wrap;
