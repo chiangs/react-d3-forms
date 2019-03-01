@@ -8,19 +8,21 @@ export const RegisterForm = {
 		},
 		value: '',
 		validation: {
+			valid: false,
 			required: true,
 			minLength: 3
 		}
 	},
 	email: {
 		label: 'Email',
-		hint: 'Remember the `@` and `.domain` such as `.com`',
+		hint: 'Remember the `@` and `.domain`',
 		elementType: 'input',
 		elementConfig: {
 			type: 'email'
 		},
 		value: '',
 		validation: {
+			valid: false,
 			required: true
 		}
 	},
@@ -33,6 +35,7 @@ export const RegisterForm = {
 		},
 		value: '',
 		validation: {
+			valid: false,
 			required: true,
 			minLength: 6
 		}

@@ -7,6 +7,11 @@
 	border: var(--border-error);
 }
 
+.Form__FormControls {
+	display: flex;
+	flex-direction: column;
+}
+
 .Form__ActionButtons {
 	display: flex;
 	justify-content: space-between;
@@ -21,5 +26,14 @@
 @media (max-width: 320px) {
 	.Form__ActionButtons > * {
 		max-width: 45%;
+	}
+}
+
+@media (min-width: 800px) {
+	.Form__FormControls {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
 	}
 }

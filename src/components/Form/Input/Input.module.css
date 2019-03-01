@@ -29,6 +29,7 @@
 	width: 100%;
 	box-sizing: border-box;
 	outline: var(--focus-outline);
+	background-color: var(--white);
 }
 
 .InputElement {
@@ -43,9 +44,12 @@
 	animation: fadeIn 1s ease-in;
 }
 
-/* Label stays in place */
-/* Hint fade-slides in from left */
-/* InputElmenet fades in */
+@media (min-width: 800px) {
+	.Input {
+		max-width: 45%;
+	}
+}
+
 /* Animations */
 @keyframes fadeIn {
 	from,

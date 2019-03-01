@@ -10,6 +10,7 @@ export default class Register extends Component {
 	};
 
 	// TODO: Add toggle show/hide password
+	// ? Refactor Form Validation and Handler to hook(s)?
 
 	inputChangedHandler = (event, inputIdentifier) => {
 		const updatedForm = {
@@ -17,13 +18,40 @@ export default class Register extends Component {
 		};
 		const updatedFormElement = { ...updatedForm[inputIdentifier] };
 		updatedFormElement.value = event.target.value;
+		updatedFormElement.validation.valid = this.checkInputValidity(
+			updatedFormElement.value,
+			updatedFormElement.validation
+		);
 		updatedForm[inputIdentifier] = updatedFormElement;
+		console.log(updatedFormElement);
 		this.setState({ form: updatedForm });
 	};
+
+	checkInputValidity(value, rules) {
+		let isValid = true;
+		if (rules.required) isValid = value.trim() !== '' && isValid;
+		if (rules.minLength)
+			isValid = value.length >= rules.minLength && isValid;
+		return isValid;
+	}
+
+	checkFormValidity(form) {
+		for (let elementIdentifier in form) {
+			if (form[elementIdentifier].validation.valid === false) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 	formSubmitHandler = event => {
 		event.preventDefault();
 		const formData = {};
+		if (!this.checkFormValidity(this.state.form)) {
+			console.error('form not valid');
+			return;
+		}
+		console.log('form valid');
 		for (let elementIdentifier in this.state.form) {
 			formData[elementIdentifier] = this.state.form[
 				elementIdentifier
