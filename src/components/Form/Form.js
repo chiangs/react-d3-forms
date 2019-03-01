@@ -12,7 +12,7 @@ const Form = props => {
 	return (
 		<form className={css.Form} onSubmit={props.formSubmitHandler}>
 			<section className={css.Form__ErrorSection}>
-				<ErrorMessages />
+				<ErrorMessages showErrors={props.showErrors} />
 			</section>
 			<section className={css.Form__FormControls}>
 				{formElements.map(element => (
@@ -24,6 +24,9 @@ const Form = props => {
 						elementType={element.config.elementType}
 						elementConfig={element.config.elementConfig}
 						value={element.config.value}
+						shouldValidate={element.config.validation}
+						valid={element.config.validation.valid}
+						showErrors={props.showErrors}
 						changed={event =>
 							props.inputChangedHandler(event, element.id)
 						}

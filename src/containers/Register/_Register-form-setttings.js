@@ -23,6 +23,7 @@ export const RegisterForm = {
 		value: '',
 		validation: {
 			valid: false,
+			email: true,
 			required: true
 		}
 	},

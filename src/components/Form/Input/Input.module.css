@@ -15,6 +15,12 @@
 	font-weight: bold;
 }
 
+.Input__Label.Invalid::after {
+	content: ' \26A0';
+	color: var(--red);
+	font-weight: bold;
+}
+
 .Input__Hint {
 	display: block;
 	font-family: var(--font-main);
@@ -42,6 +48,10 @@
 	padding: 6px 10px;
 	transition: outline 0.25s ease-out;
 	animation: fadeIn 1s ease-in;
+}
+
+.InputElement.Invalid {
+	border: var(--border-error);
 }
 
 @media (min-width: 800px) {

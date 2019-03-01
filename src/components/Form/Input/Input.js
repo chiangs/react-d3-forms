@@ -3,12 +3,18 @@ import css from './Input.module.css';
 
 const Input = props => {
 	let inputElement = null;
+	const inputClasses = [css.InputElement];
+	const labelClasses = [css.Input__Label];
+	if (!props.valid && props.shouldValidate && props.showErrors) {
+		labelClasses.push(css.Invalid);
+		inputClasses.push(css.Invalid);
+	}
 
 	switch (props.elementType) {
 		case 'input':
 			inputElement = (
 				<input
-					className={css.InputElement}
+					className={inputClasses.join(' ')}
 					{...props.elementConfig}
 					value={props.value}
 					onChange={props.changed}
@@ -20,7 +26,7 @@ const Input = props => {
 		case 'textarea':
 			inputElement = (
 				<textarea
-					className={css.InputElement}
+					className={inputClasses.join(' ')}
 					{...props.elementConfig}
 					value={props.value}
 					onChange={props.changed}
@@ -32,7 +38,7 @@ const Input = props => {
 		case 'select':
 			inputElement = (
 				<select
-					className={css.InputElement}
+					className={inputClasses.join(' ')}
 					value={props.value}
 					onChange={props.changed}
 					id={props.id}
@@ -48,7 +54,7 @@ const Input = props => {
 		default:
 			inputElement = (
 				<input
-					className={css.InputElement}
+					className={inputClasses.join(' ')}
 					{...props.elementConfig}
 					value={props.value}
 					onChange={props.changed}
@@ -66,7 +72,7 @@ const Input = props => {
 				htmlFor={props.id}
 				id={props.id}
 				name={props.name}>
-				<span className={css.Input__Label}>{props.label}</span>
+				<span className={labelClasses.join(' ')}>{props.label}</span>
 				<span className={css.Input__Hint}>{props.hint}</span>
 			</label>
 			{inputElement}

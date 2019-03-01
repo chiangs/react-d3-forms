@@ -6,7 +6,8 @@ import { RegisterForm } from './_Register-form-setttings';
 
 export default class Register extends Component {
 	state = {
-		form: RegisterForm
+		form: RegisterForm,
+		showErrors: false
 	};
 
 	// TODO: Add toggle show/hide password
@@ -29,9 +30,11 @@ export default class Register extends Component {
 
 	checkInputValidity(value, rules) {
 		let isValid = true;
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		if (rules.required) isValid = value.trim() !== '' && isValid;
 		if (rules.minLength)
 			isValid = value.length >= rules.minLength && isValid;
+		if (rules.email) isValid = value.match(mailformat) && isValid;
 		return isValid;
 	}
 
@@ -49,6 +52,7 @@ export default class Register extends Component {
 		const formData = {};
 		if (!this.checkFormValidity(this.state.form)) {
 			console.error('form not valid');
+			this.setState({ showErrors: true });
 			return;
 		}
 		console.log('form valid');
@@ -81,6 +85,7 @@ export default class Register extends Component {
 						formElements={formElements}
 						formSubmitHandler={this.formSubmitHandler}
 						inputChangedHandler={this.inputChangedHandler}
+						showErrors={this.state.showErrors}
 					/>
 				</section>
 			</article>
