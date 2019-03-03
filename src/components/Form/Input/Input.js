@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './Input.module.css';
+import Button from '../../Button/Button';
 
 const Input = props => {
 	let inputElement = null;
@@ -20,7 +21,28 @@ const Input = props => {
 					onChange={props.changed}
 					id={props.id}
 					name={props.name}
+					type={props.elementType}
 				/>
+			);
+			break;
+		case 'password':
+			inputElement = (
+				<span className={css.PasswordInput}>
+					<input
+						className={inputClasses.join(' ')}
+						// {...props.elementConfig}
+						value={props.value}
+						onChange={props.changed}
+						id={props.id}
+						name={props.name}
+						type={
+							props.elementConfig.hidden
+								? props.elementType
+								: 'text'
+						}
+					/>
+					<Button />
+				</span>
 			);
 			break;
 		case 'textarea':

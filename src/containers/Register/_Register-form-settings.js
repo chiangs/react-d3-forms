@@ -30,9 +30,10 @@ export const RegisterForm = {
 	password: {
 		label: 'Choose Password',
 		hint: 'Minimum 6 characters',
-		elementType: 'input',
+		elementType: 'password',
 		elementConfig: {
-			type: 'password'
+			type: 'password',
+			hidden: true
 		},
 		value: '',
 		validation: {

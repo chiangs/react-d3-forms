@@ -54,6 +54,14 @@
 	border: var(--border-error);
 }
 
+.PasswordInput {
+	display: flex;
+}
+
+.PasswordInput input {
+	max-width: 80%;
+}
+
 @media (min-width: 1124px) {
 	.Input {
 		max-width: 45%;
