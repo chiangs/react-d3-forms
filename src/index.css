@@ -1,5 +1,5 @@
 :root {
-	--font-main: 'Open Sans', sans-serif;
+	--font-main: 'Noto Sans', sans-serif;
 	--black: #333333;
 	--white: #ffffff;
 	--grey: #cccccc;
@@ -20,6 +20,7 @@
 	--font-max: 50px;
 	--view-padding: 5% 25%;
 	--view-padding-mobile: 1% 5%;
+	--navbar-height: 100px;
 }
 
 body {

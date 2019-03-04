@@ -41,7 +41,9 @@ const Input = props => {
 								: 'text'
 						}
 					/>
-					<Button />
+					<Button type="button" clicked={props.togglePassword}>
+						toggle Password
+					</Button>
 				</span>
 			);
 			break;

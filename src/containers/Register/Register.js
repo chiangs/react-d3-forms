@@ -35,6 +35,17 @@ export default class Register extends Component {
 		this.setState({ form: updatedForm });
 	};
 
+	togglePassword = inputIdentifier => {
+		const updatedForm = {
+			...this.state.form
+		};
+		const updatedFormElement = { ...updatedForm[inputIdentifier] };
+		updatedFormElement.elementConfig.hidden = !updatedFormElement
+			.elementConfig.hidden;
+		updatedForm[inputIdentifier] = updatedFormElement;
+		this.setState({ form: updatedForm });
+	};
+
 	checkInputValidity(value, rules) {
 		let isValid = true;
 		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -53,6 +64,10 @@ export default class Register extends Component {
 		}
 		return true;
 	}
+
+	cancelForm = () => {
+		console.log('cancel');
+	};
 
 	formSubmitHandler = event => {
 		event.preventDefault();
@@ -90,9 +105,11 @@ export default class Register extends Component {
 				<section className={css.FormSection}>
 					<Form
 						formElements={formElements}
-						formSubmitHandler={this.formSubmitHandler}
+						togglePassword={this.togglePassword}
+						cancelForm={this.cancelForm}
 						inputChangedHandler={this.inputChangedHandler}
 						showErrors={this.state.showErrors}
+						formSubmitHandler={this.formSubmitHandler}
 					/>
 				</section>
 			</article>

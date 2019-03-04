@@ -2,11 +2,12 @@ import React from 'react';
 import css from './Button.module.css';
 
 const Button = props => {
+	const type = props.type ? props.type : 'submit';
 	return (
-		<button className={css.Button} onClick={props.clicked}>
+		<button className={css.Button} type={type} onClick={props.clicked}>
 			{props.children}
 		</button>
 	);
 };
 
-export default Button;
+export default React.memo(Button);

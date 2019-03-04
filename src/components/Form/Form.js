@@ -48,12 +48,15 @@ const Form = props => {
 						changed={event =>
 							props.inputChangedHandler(event, element.id)
 						}
+						togglePassword={() => props.togglePassword(element.id)}
 					/>
 				))}
 			</section>
 			<section className={css.Form__ActionButtons}>
 				<Button>{buttonConfirmLabel}</Button>
-				<Button>{buttonCancelLabel}</Button>
+				<Button type="button" clicked={props.cancelForm}>
+					{buttonCancelLabel}
+				</Button>
 			</section>
 		</form>
 	);

@@ -1,0 +1,24 @@
+.Navbar {
+	box-sizing: border-box;
+	width: 100%;
+	height: var(--navbar-height);
+	position: sticky;
+	border: var(--border);
+	padding: var(--double);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Navbar__Logo {
+	font-weight: bold;
+}
+
+.Navbar__LogoMain {
+	font-size: var(--font-label);
+}
+
+.Navbar__LogoSecondary {
+	font-size: var(--font-reg);
+	font-style: italic;
+}

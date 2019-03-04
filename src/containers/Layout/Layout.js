@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import css from './Layout.module.css';
+import Navbar from '../../components/Navbar/Navbar';
 
 export default class Layout extends Component {
 	state = {
@@ -10,7 +11,7 @@ export default class Layout extends Component {
 		const Fragment = React.Fragment;
 		return (
 			<Fragment>
-				{/* Toolbar */}
+				<Navbar />
 				{/* Sidedrawer */}
 				<main className={css.Main}>{this.props.children}</main>
 			</Fragment>
