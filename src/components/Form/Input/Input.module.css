@@ -15,6 +15,11 @@
 	font-weight: bold;
 }
 
+.Input__Optional {
+	font-family: var(--font-main);
+	font-size: var(--font-min);
+}
+
 .Input__Label.Invalid::after {
 	content: ' \26A0';
 	color: var(--red);
@@ -47,7 +52,7 @@
 	font: inherit;
 	padding: 6px 10px;
 	transition: outline 0.25s ease-out;
-	animation: fadeIn 1s ease-in;
+	animation: fadeIn 1.2s ease-in;
 }
 
 .InputElement.Invalid {
@@ -60,6 +65,10 @@
 
 .PasswordInput input {
 	max-width: 80%;
+}
+
+.PasswordInput button {
+	max-width: 20%;
 }
 
 @media (min-width: 1124px) {

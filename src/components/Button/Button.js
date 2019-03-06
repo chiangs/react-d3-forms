@@ -3,8 +3,15 @@ import css from './Button.module.css';
 
 const Button = props => {
 	const type = props.type ? props.type : 'submit';
+	const classes = [css.Button];
+	if (props.passwordToggle) {
+		classes.push(css.Toggle);
+	}
 	return (
-		<button className={css.Button} type={type} onClick={props.clicked}>
+		<button
+			className={classes.join(' ')}
+			type={type}
+			onClick={props.clicked}>
 			{props.children}
 		</button>
 	);

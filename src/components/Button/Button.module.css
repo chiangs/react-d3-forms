@@ -11,3 +11,12 @@
 .Button:hover {
 	background-color: #ccc;
 }
+
+.Toggle {
+	background-color: var(--blue);
+	color: var(--white);
+}
+
+.Toggle:hover {
+	background-color: var(--blue-dark);
+}

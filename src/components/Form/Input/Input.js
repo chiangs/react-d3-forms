@@ -6,6 +6,10 @@ const Input = props => {
 	let inputElement = null;
 	const inputClasses = [css.InputElement];
 	const labelClasses = [css.Input__Label];
+	const optionLabel = props.shouldValidate.required ? null : (
+		<i> (optional)</i>
+	);
+	const toggleText = props.elementConfig.hidden ? 'Show' : 'Hide';
 	if (!props.valid && props.shouldValidate && props.showErrors) {
 		labelClasses.push(css.Invalid);
 		inputClasses.push(css.Invalid);
@@ -41,8 +45,11 @@ const Input = props => {
 								: 'text'
 						}
 					/>
-					<Button type="button" clicked={props.togglePassword}>
-						toggle Password
+					<Button
+						type="button"
+						passwordToggle={true}
+						clicked={props.togglePassword}>
+						{toggleText}
 					</Button>
 				</span>
 			);
@@ -96,7 +103,10 @@ const Input = props => {
 				htmlFor={props.id}
 				id={props.id}
 				name={props.name}>
-				<span className={labelClasses.join(' ')}>{props.label}</span>
+				<span className={labelClasses.join(' ')}>
+					{props.label}
+					<span className={css.Input__Optional}>{optionLabel}</span>
+				</span>
 				<span className={css.Input__Hint}>{props.hint}</span>
 			</label>
 			{inputElement}
@@ -104,4 +114,4 @@ const Input = props => {
 	);
 };
 
-export default Input;
+export default React.memo(Input);

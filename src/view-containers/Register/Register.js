@@ -17,7 +17,6 @@ export default class Register extends Component {
 		showErrors: false
 	};
 
-	// TODO: Add toggle show/hide password
 	// ? Refactor Form Validation and Handler to hook(s)?
 
 	inputChangedHandler = (event, inputIdentifier) => {
@@ -66,7 +65,7 @@ export default class Register extends Component {
 	}
 
 	cancelForm = () => {
-		console.log('cancel');
+		this.setState({ form: RegisterForm });
 	};
 
 	formSubmitHandler = event => {

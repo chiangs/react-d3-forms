@@ -4,6 +4,7 @@
 	--white: #ffffff;
 	--grey: #cccccc;
 	--blue: #00a2ff;
+	--blue-dark: #018ddf;
 	--red: #d30000;
 	--error: var(--red);
 	--border: 1px solid var(--black);
