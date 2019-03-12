@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import { ROUTES } from './_references/Constants';
+import { Route } from 'react-router-dom';
 import Layout from './view-containers/Layout/Layout';
 import Register from './view-containers/Register/Register';
 import Landing from './view-containers/Landing/Landing';
@@ -9,8 +11,8 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Layout>
-					{/* <Landing /> */}
-					<Register />
+					<Route path={ROUTES.INDEX} component={Landing} exact />
+					<Route path={ROUTES.REGISTER} component={Register} />
 					{/* Login Form */}
 					{/* Ordering Form */}
 					{/* Multi-step form */}

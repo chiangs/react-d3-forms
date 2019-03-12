@@ -1,5 +1,7 @@
 :root {
-	--font-main: 'Noto Sans', sans-serif;
+	/* --font-main: 'Noto Sans', sans-serif; */
+	--font-main: 'Montserrat', sans-serif;
+	--font-secondary: 'Raleway', sans-serif;
 	--black: #333333;
 	--white: #ffffff;
 	--grey: #cccccc;
@@ -55,7 +57,7 @@ canvas {
 }
 
 body {
-	font-family: var(--font-main);
+	font-family: var(--font-secondary);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -67,16 +69,18 @@ code {
 
 h1,
 h2,
-h3 {
-	font-family: var(--font-main);
-	font-weight: bold;
-}
-
+h3,
 h4,
 h5,
-h6,
-p {
+h6 {
 	font-family: var(--font-main);
+	font-weight: bold;
+	letter-spacing: 0.1em;
+}
+
+p {
+	font-family: var(--font-secondary);
+	letter-spacing: 0.1em;
 }
 
 ul {
@@ -97,6 +101,8 @@ button {
 	border-radius: 0;
 	padding: 0.75em 1em;
 	background-color: transparent;
+	font-family: var(--font-main);
+	letter-spacing: 0.1em;
 }
 
 embed,
