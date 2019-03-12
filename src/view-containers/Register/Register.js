@@ -19,20 +19,20 @@ export default class Register extends Component {
 
 	// ? Refactor Form Validation and Handler to hook(s)?
 
-	inputChangedHandler = (event, inputIdentifier) => {
-		const updatedForm = {
-			...this.state.form
-		};
-		const updatedFormElement = { ...updatedForm[inputIdentifier] };
-		updatedFormElement.value = event.target.value;
-		updatedFormElement.validation.valid = this.checkInputValidity(
-			updatedFormElement.value,
-			updatedFormElement.validation
-		);
-		updatedForm[inputIdentifier] = updatedFormElement;
-		console.log(updatedFormElement);
-		this.setState({ form: updatedForm });
-	};
+	// inputChangedHandler = (event, inputIdentifier) => {
+	// 	const updatedForm = {
+	// 		...this.state.form
+	// 	};
+	// 	const updatedFormElement = { ...updatedForm[inputIdentifier] };
+	// 	updatedFormElement.value = event.target.value;
+	// 	updatedFormElement.validation.valid = this.checkInputValidity(
+	// 		updatedFormElement.value,
+	// 		updatedFormElement.validation
+	// 	);
+	// 	updatedForm[inputIdentifier] = updatedFormElement;
+	// 	console.log(updatedFormElement);
+	// 	this.setState({ form: updatedForm });
+	// };
 
 	togglePassword = inputIdentifier => {
 		const updatedForm = {
@@ -47,6 +47,7 @@ export default class Register extends Component {
 
 	checkInputValidity(value, rules) {
 		let isValid = true;
+		// eslint-disable-next-line no-useless-escape
 		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		if (rules.required) isValid = value.trim() !== '' && isValid;
 		if (rules.minLength)
@@ -69,7 +70,10 @@ export default class Register extends Component {
 	};
 
 	formSubmitHandler = event => {
+		console.log('in register submit handler', event);
 		event.preventDefault();
+		// TODO Getting new shape of data...adjust here
+		// ? refactor validation to hook?
 		const formData = {};
 		if (!this.checkFormValidity(this.state.form)) {
 			console.error('form not valid');
@@ -89,13 +93,6 @@ export default class Register extends Component {
 	};
 
 	render() {
-		const formElements = [];
-		for (const key in this.state.form) {
-			formElements.push({
-				id: key,
-				config: this.state.form[key]
-			});
-		}
 		return (
 			<article className={css.Register}>
 				<section className={css.DataVisualization}>
@@ -103,12 +100,13 @@ export default class Register extends Component {
 				</section>
 				<section className={css.FormSection}>
 					<Form
-						formElements={formElements}
+						form={this.state.form}
+						formSubmit={this.formSubmitHandler}
 						togglePassword={this.togglePassword}
 						cancelForm={this.cancelForm}
-						inputChangedHandler={this.inputChangedHandler}
+						// inputChangedHandler={this.inputChangedHandler}
 						showErrors={this.state.showErrors}
-						formSubmitHandler={this.formSubmitHandler}
+						// formSubmitHandler={this.formSubmitHandler}
 					/>
 				</section>
 			</article>

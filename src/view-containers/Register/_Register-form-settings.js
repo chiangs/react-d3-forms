@@ -20,7 +20,7 @@ export const RegisterForm = {
 		elementConfig: {
 			type: 'email'
 		},
-		value: '',
+		value: 'testest@test.test',
 		validation: {
 			valid: false,
 			email: true,

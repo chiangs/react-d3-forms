@@ -1,4 +1,4 @@
 export const ROUTES = {
 	INDEX: '/',
-	REGISTER: 'forms/register'
+	REGISTER: '/forms/register'
 };

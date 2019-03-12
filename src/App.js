@@ -12,7 +12,7 @@ class App extends Component {
 			<div className="App">
 				<Layout>
 					<Route path={ROUTES.INDEX} component={Landing} exact />
-					<Route path={ROUTES.REGISTER} component={Register} />
+					<Route path={ROUTES.REGISTER} component={Register} exact />
 					{/* Login Form */}
 					{/* Ordering Form */}
 					{/* Multi-step form */}
